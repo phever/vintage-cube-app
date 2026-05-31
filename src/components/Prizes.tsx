@@ -250,7 +250,7 @@ export default function Prizes() {
             lineHeight: 1.6,
           }}
         >
-          * All prizes are Magic: the Gathering cards.
+          * All prizes are Magic: the Gathering cards. All prizes can be traded in by the prize winners to Reliquary Cards for 100% of their sale value - approximately $700, $360, $170, $110.
         </p>
       </div>
     </section>
