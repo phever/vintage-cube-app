@@ -75,7 +75,7 @@ export default function Hero() {
         </span>
         . Grand prize:{" "}
         <span style={{ color: "var(--text)", fontWeight: 500 }}>
-          Underground Sea
+          Revised Tundra
         </span>
         .
       </p>
@@ -114,8 +114,8 @@ export default function Hero() {
         {[
           { num: "64", label: "Players" },
           { num: "8", label: "Pods" },
-          { num: "Aug 1–8", label: "Qualifying rounds" },
-          { num: "Aug 15", label: "Top 8 final" },
+          { num: "Aug 15–23", label: "Qualifying rounds" },
+          { num: "Aug 29", label: "Top 8 final" },
         ].map((stat, i) => (
           <div
             key={i}

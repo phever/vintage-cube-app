@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Vintage Cube for Calgary Food Bank — Reliquary Cards",
   description:
-    "64-player charity vintage cube tournament hosted by Reliquary Cards in Calgary, supporting the Calgary Food Bank. August 1–15, 2026. Top prize: Underground Sea.",
+    "64-player charity vintage cube tournament hosted by Reliquary Cards in Calgary, supporting the Calgary Food Bank. August 15–29, 2026. Top prize: Revised Tundra.",
   icons: {
     icon: [
       { url: "/Reliquary-Favicon.png" },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vintage Cube for Calgary Food Bank — Reliquary Cards",
     description:
-      "Draft the most broken cards in Magic — for the Calgary Food Bank. Top prize: Underground Sea.",
+      "Draft the most broken cards in Magic — for the Calgary Food Bank. Top prize: Revised Tundra.",
   },
 };
 

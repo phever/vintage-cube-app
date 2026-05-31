@@ -3,9 +3,9 @@ import Image from "next/image";
 const prizes = [
   {
     place: "1st place",
-    card: "Underground Sea",
+    card: "Tundra",
     type: "Revised Edition",
-    image: "https://cards.scryfall.io/large/front/1/f/1f35877c-e66c-4ef0-842a-f68cd233ae4b.jpg?1559596915",
+    image: "https://cards.scryfall.io/large/front/9/c/9c9d5f72-e199-4d5b-ae7e-cc5b9bdfae99.jpg?1559596750",
     featured: true,
   },
   {
@@ -17,16 +17,16 @@ const prizes = [
   },
   {
     place: "3rd–4th",
-    card: "Force of Will",
-    type: "Alliances",
-    image: "https://cards.scryfall.io/large/front/9/a/9a879b60-4381-447d-8a5a-8e0b6a1d49ca.jpg?1562769672",
+    card: "Demonic Tutor",
+    type: "Unlimited Edition",
+    image: "https://cards.scryfall.io/large/front/c/8/c8d5d6a5-6807-4a80-9460-7633dc430ee9.jpg?1559591813",
     featured: false,
   },
   {
     place: "5th–8th",
-    card: "Store Credit",
-    type: "Reliquary Cards",
-    image: null,
+    card: "Force of Will",
+    type: "Alliances",
+    image: "https://cards.scryfall.io/large/front/9/a/9a879b60-4381-447d-8a5a-8e0b6a1d49ca.jpg?1562769672",
     featured: false,
   },
 ];
@@ -250,7 +250,7 @@ export default function Prizes() {
             lineHeight: 1.6,
           }}
         >
-          * All physical prizes are authentic Magic: the Gathering cards. Store credit can be used for any product at Reliquary Cards (excludes event entry fees).
+          * All prizes are Magic: the Gathering cards.
         </p>
       </div>
     </section>

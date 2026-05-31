@@ -1,8 +1,8 @@
 const pods = [
-  { date: "Sat Aug 1", times: ["2:00 PM", "6:00 PM"] },
-  { date: "Sun Aug 2", times: ["2:00 PM", "6:00 PM"] },
-  { date: "Sat Aug 7", times: ["2:00 PM", "6:00 PM"] },
-  { date: "Sun Aug 8", times: ["2:00 PM", "6:00 PM"] },
+  { date: "Sat Aug 15", times: ["2:00 PM", "6:00 PM"] },
+  { date: "Sun Aug 16", times: ["2:00 PM", "6:00 PM"] },
+  { date: "Sat Aug 22", times: ["2:00 PM", "6:00 PM"] },
+  { date: "Sun Aug 23", times: ["2:00 PM", "6:00 PM"] },
 ];
 
 export default function Schedule() {
@@ -53,7 +53,7 @@ export default function Schedule() {
               }}
             >
               Eight pods run across two weekends. Win your pod to qualify for
-              the Top 8 final draft on August 15th. Each pod seats 8 players.
+              the Top 8 final draft on August 29th. Each pod seats 8 players.
             </p>
 
             {/* How it works */}
@@ -209,7 +209,7 @@ export default function Schedule() {
                       fontWeight: 500,
                     }}
                   >
-                    ★ SAT AUG 15
+                    ★ SAT AUG 29
                   </div>
                   <div
                     style={{
