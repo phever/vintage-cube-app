@@ -181,6 +181,50 @@ body {
   color: #fff7e8;
 }
 
+/* Responsive utilities */
+.logo-desktop {
+  display: block;
+}
+.logo-mobile {
+  display: none;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-desktop {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+  }
+  
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Venue() {
   return (
     <section id="venue" style={{ padding: "80px 24px" }}>
@@ -41,57 +43,85 @@ export default function Venue() {
           </p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 24,
-          }}
-        >
-          {/* Map placeholder */}
+        <div className="responsive-grid">
+          {/* Map visual */}
           <div
             style={{
-              background: "var(--surface)",
+              background: "#121212",
               border: "1px solid var(--border)",
               borderRadius: 12,
               height: 280,
+              position: "relative",
+              overflow: "hidden",
               display: "flex",
-              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              gap: 12,
             }}
           >
-            <svg
-              width={40}
-              height={40}
-              viewBox="0 0 40 40"
-              fill="none"
-              style={{ opacity: 0.3 }}
+            {/* Faux map background */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "radial-gradient(circle at 50% 50%, #222 0%, #111 100%)",
+                opacity: 0.5,
+              }}
+            />
+            {/* Faux grid lines */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundImage:
+                  "linear-gradient(#ffffff05 1px, transparent 1px), linear-gradient(90deg, #ffffff05 1px, transparent 1px)",
+                backgroundSize: "40px 40px",
+              }}
+            />
+
+            <div
+              style={{
+                position: "relative",
+                zIndex: 1,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 16,
+              }}
             >
-              <circle
-                cx="20"
-                cy="18"
-                r="8"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              <circle cx="20" cy="18" r="3" fill="currentColor" />
-              <path
-                d="M20 26 C14 30 8 35 8 38 L32 38 C32 35 26 30 20 26Z"
-                fill="currentColor"
-                opacity="0.3"
-              />
-            </svg>
-            <a
-              href="https://maps.google.com/?q=Reliquary+Cards+Calgary+AB"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-accent"
-              style={{ fontFamily: "var(--font-mono)", fontSize: 12, letterSpacing: "0.05em" }}
-            >
-              Open in Google Maps ↗
-            </a>
+              <div
+                style={{
+                  width: 48,
+                  height: 48,
+                  background: "var(--accent)",
+                  borderRadius: "50% 50% 50% 0",
+                  transform: "rotate(-45deg)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 4px 12px rgba(201,100,66,0.4)",
+                }}
+              >
+                <div
+                  style={{
+                    width: 12,
+                    height: 12,
+                    background: "white",
+                    borderRadius: "50%",
+                    transform: "rotate(45deg)",
+                  }}
+                />
+              </div>
+              <a
+                href="https://maps.google.com/?q=Reliquary+Cards+Calgary+AB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cta-outline-white"
+                style={{ fontSize: 12, padding: "10px 20px" }}
+              >
+                View on Google Maps ↗
+              </a>
+            </div>
           </div>
 
           {/* Details */}
@@ -127,12 +157,12 @@ export default function Venue() {
                 Calgary, Alberta
                 <br />
                 <a
-                  href="https://reliquarycards.ca"
+                  href="https://reliquarycards.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-accent"
                 >
-                  reliquarycards.ca ↗
+                  reliquarycards.com ↗
                 </a>
               </div>
             </div>
@@ -177,13 +207,40 @@ export default function Venue() {
                   lineHeight: 1.6,
                 }}
               >
-                Per seat · All proceeds go to charity.
+                Per seat · Covers prizes and donation.
                 <br />
-                <span
-                  style={{ color: "var(--text-subtle)", fontSize: 12 }}
+                <div
+                  style={{
+                    marginTop: 16,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                  }}
                 >
-                  Charity partner TBD — 100% of entry fees donated.
-                </span>
+                  <Image
+                    src="/calgary-food-bank-logo.jpg"
+                    alt="Calgary Food Bank"
+                    width={60}
+                    height={32}
+                    style={{
+                      borderRadius: 4,
+                      objectFit: "contain",
+                      background: "white",
+                    }}
+                  />
+                  <span
+                    style={{
+                      color: "var(--text-subtle)",
+                      fontSize: 12,
+                      fontWeight: 500,
+                    }}
+                  >
+                    100% of proceeds (entry fees minus prizing) donated directly
+                    to the Calgary Food Bank. Additional donations (including
+                    food donations like canned goods) will be accepted at the
+                    door.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -192,3 +249,4 @@ export default function Venue() {
     </section>
   );
 }
+

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer
@@ -21,13 +23,16 @@ export default function Footer() {
         <div>
           <div
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: 20,
-              fontWeight: 700,
-              marginBottom: 4,
+              marginBottom: 8,
             }}
           >
-            ✦ Reliquary Cards
+            <Image
+              src="/Reliquary_Logo_Full_Stroke.png"
+              alt="Reliquary Cards Logo"
+              width={140}
+              height={28}
+              style={{ height: "28px", width: "auto" }}
+            />
           </div>
           <div
             style={{
@@ -37,26 +42,26 @@ export default function Footer() {
               letterSpacing: "0.08em",
             }}
           >
-            Charity Vintage Cube · Calgary AB · August 2026
+            Supporting the Calgary Food Bank · Calgary AB · August 2026
           </div>
         </div>
 
         <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
           <a
-            href="https://cubecobra.com/cube/list/mokecube"
+            href="https://www.calgaryfoodbank.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="link-muted"
           >
-            CubeCobra List ↗
+            Calgary Food Bank ↗
           </a>
           <a
-            href="https://reliquarycards.ca"
+            href="https://reliquarycards.com"
             target="_blank"
             rel="noopener noreferrer"
             className="link-muted"
           >
-            reliquarycards.ca ↗
+            reliquarycards.com ↗
           </a>
         </div>
       </div>

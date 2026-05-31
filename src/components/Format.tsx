@@ -10,14 +10,7 @@ export default function Format() {
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 64,
-            alignItems: "start",
-          }}
-        >
+        <div className="responsive-grid" style={{ gap: "clamp(32px, 5vw, 64px)" }}>
           {/* Left: explainer */}
           <div>
             <div
@@ -55,8 +48,10 @@ export default function Format() {
               }}
             >
               <p style={{ margin: "0 0 16px" }}>
-                A cube is one person&apos;s curated singleton card list — think{" "}
-                <em>&ldquo;the best of Magic, distilled into 360 cards.&rdquo;</em>
+                A cube is one person&apos;s curated singleton card list — this
+                event features a curated{" "}
+                <strong style={{ color: "var(--text)" }}>540-card</strong> pool
+                inspired by the legendary MTGO Vintage Cube.
               </p>
               <p style={{ margin: "0 0 16px" }}>
                 You sit down with 7 others and draft 3 packs of 15 cards. Build
@@ -65,8 +60,8 @@ export default function Format() {
               <p style={{ margin: 0 }}>
                 <strong style={{ color: "var(--text)" }}>Vintage</strong> means
                 the most broken, most powerful cards ever printed are all in the
-                pool — dual lands, Moxen, Black Lotus equivalents, broken
-                spells. Pure, unfiltered Magic.
+                pool — Power Nine, dual lands, and every broken spell ever
+                printed. Pure, unfiltered Magic.
               </p>
             </div>
 
@@ -86,8 +81,8 @@ export default function Format() {
             {[
               {
                 label: "Cards in pool",
-                value: "360",
-                note: "Singleton — each card appears once",
+                value: "540",
+                note: "Singleton — based on the best of the MTGO Vintage Cube",
               },
               {
                 label: "Pack size",

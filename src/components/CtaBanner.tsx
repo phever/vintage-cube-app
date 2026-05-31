@@ -39,8 +39,9 @@ export default function CtaBanner() {
               lineHeight: 1.6,
             }}
           >
-            64 seats across 8 pods. $50 entry fee, all proceeds to charity.
-            Don&apos;t miss your chance at a piece of Magic history.
+            64 seats across 8 pods. $50 entry fee, 100% of proceeds to the{" "}
+            <strong>Calgary Food Bank</strong>. Additional donations (including
+            food donations like canned goods) will be accepted at the door.
           </p>
         </div>
 
@@ -53,8 +54,13 @@ export default function CtaBanner() {
           >
             View cube list ↗
           </a>
-          <a href="#venue" className="btn-cta-white">
-            Get details →
+          <a
+            href="https://reliquarycards.com/events"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta-white"
+          >
+            Get details & Register →
           </a>
         </div>
       </div>

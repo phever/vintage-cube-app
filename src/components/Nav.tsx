@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const links = [
   { href: "#prizes", label: "Prizes" },
@@ -48,19 +49,39 @@ export default function Nav() {
         <a
           href="#"
           style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 22,
-            fontWeight: 700,
-            color: "var(--text)",
+            display: "flex",
+            alignItems: "center",
             textDecoration: "none",
-            letterSpacing: "-0.3px",
+            flexShrink: 0,
           }}
         >
-          ✦ Reliquary Cards
+          <div className="logo-desktop" style={{ width: 160, height: 32 }}>
+            <Image
+              src="/Reliquary_Logo_Full_Stroke.png"
+              alt="Reliquary Cards Logo"
+              width={160}
+              height={32}
+              style={{ height: "32px", width: "auto", objectFit: "contain" }}
+              priority
+            />
+          </div>
+          <div className="logo-mobile" style={{ width: 32, height: 32 }}>
+            <Image
+              src="/Reliquary-Favicon.png"
+              alt="Reliquary Cards Logo"
+              width={32}
+              height={32}
+              style={{ height: "32px", width: "auto", objectFit: "contain" }}
+              priority
+            />
+          </div>
         </a>
 
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div style={{ display: "flex", gap: 4, marginRight: 8 }}>
+          <div
+            className="hide-on-mobile"
+            style={{ display: "flex", gap: 4, marginRight: 8 }}
+          >
             {links.map((l) => (
               <a key={l.href} href={l.href} className="nav-link">
                 {l.label}
@@ -72,6 +93,7 @@ export default function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             className="nav-cube-link"
+            style={{ whiteSpace: "nowrap" }}
           >
             Cube List ↗
           </a>

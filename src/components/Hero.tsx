@@ -69,8 +69,11 @@ export default function Hero() {
           lineHeight: 1.6,
         }}
       >
-        64 players. 8 pods of 8. Win your pod, earn a spot in the top 8 final
-        draft on August 15th. Grand prize:{" "}
+        540 cards. 8 pods of 8. 100% of proceeds supporting the{" "}
+        <span style={{ color: "var(--text)", fontWeight: 500 }}>
+          Calgary Food Bank
+        </span>
+        . Grand prize:{" "}
         <span style={{ color: "var(--text)", fontWeight: 500 }}>
           Underground Sea
         </span>
@@ -79,8 +82,13 @@ export default function Hero() {
 
       {/* CTAs */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        <a href="#schedule" className="btn-accent">
-          See the schedule →
+        <a
+          href="https://reliquarycards.com/events"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-accent"
+        >
+          Register for a seat →
         </a>
         <a
           href="https://cubecobra.com/cube/list/mokecube"

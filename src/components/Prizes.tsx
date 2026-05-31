@@ -1,70 +1,81 @@
+import Image from "next/image";
+
 const prizes = [
   {
     place: "1st place",
     card: "Underground Sea",
-    type: "Dual Land",
-    color: "var(--accent)",
+    type: "Revised Edition",
+    image: "https://cards.scryfall.io/large/front/1/f/1f35877c-e66c-4ef0-842a-f68cd233ae4b.jpg?1559596915",
     featured: true,
   },
   {
     place: "2nd place",
-    card: "Vintage Staple",
-    type: "Reserved List",
-    color: "var(--text-muted)",
+    card: "Berserk",
+    type: "Limited Edition Beta",
+    image: "https://cards.scryfall.io/large/front/8/8/88d6f431-a7ea-4508-a52c-86d33e12e4e4.jpg?1559591868",
     featured: false,
   },
   {
     place: "3rd–4th",
-    card: "Power-adjacent",
-    type: "Reserved List",
-    color: "var(--text-muted)",
+    card: "Force of Will",
+    type: "Alliances",
+    image: "https://cards.scryfall.io/large/front/9/a/9a879b60-4381-447d-8a5a-8e0b6a1d49ca.jpg?1562769672",
     featured: false,
   },
   {
     place: "5th–8th",
-    card: "Reserved List",
-    type: "Vintage Rare",
-    color: "var(--text-muted)",
+    card: "Store Credit",
+    type: "Reliquary Cards",
+    image: null,
     featured: false,
   },
 ];
 
-function CardArt({ featured }: { featured: boolean }) {
+function CardArt({ image, featured, cardName }: { image: string | null; featured: boolean; cardName: string }) {
+  if (!image) {
+    return (
+      <div
+        style={{
+          width: featured ? 120 : 90,
+          height: featured ? 168 : 126,
+          borderRadius: 6,
+          border: "1px solid var(--border)",
+          background: "var(--surface-raised)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexShrink: 0,
+        }}
+      >
+        <div style={{ textAlign: "center", padding: 8 }}>
+          <div style={{ fontSize: 24, marginBottom: 4 }}>💳</div>
+          <div style={{ fontSize: 10, fontFamily: "var(--font-mono)", opacity: 0.5 }}>CREDIT</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
-        width: featured ? 120 : 90,
-        height: featured ? 168 : 126,
-        borderRadius: 6,
+        width: featured ? 140 : 100,
+        height: featured ? 196 : 140,
+        borderRadius: 8,
         border: featured ? "2px solid var(--accent)" : "1px solid var(--border)",
-        background: featured ? "var(--accent-faint)" : "var(--surface-raised)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        background: "var(--surface-raised)",
         flexShrink: 0,
         position: "relative",
         overflow: "hidden",
+        boxShadow: featured ? "0 8px 24px rgba(201,100,66,0.3)" : "none",
       }}
     >
-      {/* MTG-ish card frame lines */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 6,
-          border: featured ? "1px solid rgba(201,100,66,0.3)" : "1px solid rgba(255,255,255,0.06)",
-          borderRadius: 3,
-        }}
+      <Image
+        src={image}
+        alt={cardName}
+        fill
+        style={{ objectFit: "cover" }}
+        unoptimized
       />
-      <svg
-        width={featured ? 48 : 36}
-        height={featured ? 48 : 36}
-        viewBox="0 0 48 48"
-        fill="none"
-        style={{ opacity: featured ? 0.6 : 0.25 }}
-      >
-        <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M24 8 L28 20 L40 20 L30 28 L34 40 L24 32 L14 40 L18 28 L8 20 L20 20 Z" fill="currentColor" opacity="0.5" />
-      </svg>
     </div>
   );
 }
@@ -93,7 +104,7 @@ export default function Prizes() {
               marginBottom: 12,
             }}
           >
-            Top 8 Takes Home Vintage
+            The Prize Pool
           </div>
           <h2
             style={{
@@ -104,7 +115,7 @@ export default function Prizes() {
               margin: 0,
             }}
           >
-            The Prize Pool.
+            Top 8 Stakes.
           </h2>
         </div>
 
@@ -113,7 +124,7 @@ export default function Prizes() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 16,
+            gap: 20,
           }}
         >
           {prizes.map((prize, i) => (
@@ -122,16 +133,73 @@ export default function Prizes() {
               style={{
                 background: prize.featured ? "var(--accent-faint)" : "var(--surface-raised)",
                 border: `1px solid ${prize.featured ? "var(--accent)" : "var(--border)"}`,
-                borderRadius: 12,
+                borderRadius: 16,
                 padding: 24,
                 display: "flex",
                 flexDirection: "column",
-                gap: 16,
-                transform: prize.featured ? "none" : `rotate(${(i - 1.5) * 0.4}deg)`,
-                transition: "transform 0.2s",
+                gap: 20,
+                transition: "transform 0.2s, background 0.2s",
+                position: "relative",
               }}
             >
-              <CardArt featured={prize.featured} />
+              {prize.card === "Berserk" && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: -45,
+                    right: -30,
+                    zIndex: 20,
+                    transform: "rotate(6deg)",
+                    pointerEvents: "none",
+                  }}
+                >
+                  <div
+                    style={{
+                      background: "#ffeb3b",
+                      color: "#1a1612",
+                      padding: "10px 14px",
+                      borderRadius: "2px",
+                      boxShadow: "4px 4px 0px rgba(0,0,0,0.2)",
+                      fontFamily: "var(--font-display)",
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      lineHeight: 1.1,
+                      maxWidth: "140px",
+                      border: "2px solid #1a1612",
+                      textAlign: "center",
+                    }}
+                  >
+                    this is you when you lose the finals
+                  </div>
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    style={{
+                      position: "absolute",
+                      left: -35,
+                      bottom: -15,
+                      transform: "rotate(-15deg)",
+                    }}
+                  >
+                    <path
+                      d="M45 5 C 35 15 25 35 5 45"
+                      stroke="#c96442"
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M5 45 L 15 42 M 5 45 L 8 35"
+                      stroke="#c96442"
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+              )}
+              <CardArt image={prize.image} featured={prize.featured} cardName={prize.card} />
               <div>
                 <div
                   style={{
@@ -140,7 +208,7 @@ export default function Prizes() {
                     letterSpacing: "0.15em",
                     color: prize.featured ? "var(--accent)" : "var(--text-muted)",
                     textTransform: "uppercase",
-                    marginBottom: 6,
+                    marginBottom: 8,
                   }}
                 >
                   {prize.place}
@@ -148,11 +216,11 @@ export default function Prizes() {
                 <div
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: prize.featured ? 28 : 22,
+                    fontSize: prize.featured ? 32 : 24,
                     fontWeight: 700,
                     color: prize.featured ? "var(--accent)" : "var(--text)",
-                    lineHeight: 1,
-                    marginBottom: 4,
+                    lineHeight: 1.1,
+                    marginBottom: 6,
                   }}
                 >
                   {prize.card}
@@ -162,6 +230,7 @@ export default function Prizes() {
                     fontFamily: "var(--font-mono)",
                     fontSize: 11,
                     color: "var(--text-muted)",
+                    letterSpacing: "0.02em",
                   }}
                 >
                   {prize.type}
@@ -173,14 +242,15 @@ export default function Prizes() {
 
         <p
           style={{
-            marginTop: 24,
+            marginTop: 32,
             fontFamily: "var(--font-mono)",
             fontSize: 12,
             color: "var(--text-subtle)",
-            letterSpacing: "0.05em",
+            maxWidth: 600,
+            lineHeight: 1.6,
           }}
         >
-          * Exact prizes for 2nd–8th place TBD. All prizes are vintage Magic: the Gathering cards.
+          * All physical prizes are authentic Magic: the Gathering cards. Store credit can be used for any product at Reliquary Cards (excludes event entry fees).
         </p>
       </div>
     </section>
