@@ -1,8 +1,8 @@
 const pods = [
-  { date: "Sat Aug 15", times: ["2:00 PM", "6:00 PM"] },
-  { date: "Sun Aug 16", times: ["2:00 PM", "6:00 PM"] },
-  { date: "Sat Aug 22", times: ["2:00 PM", "6:00 PM"] },
-  { date: "Sun Aug 23", times: ["2:00 PM", "6:00 PM"] },
+  { date: "Sat Aug 15", times: ["12:00 PM", "5:00 PM"] },
+  { date: "Sun Aug 16", times: ["12:00 PM", "5:00 PM"] },
+  { date: "Sat Aug 22", times: ["12:00 PM", "5:00 PM"] },
+  { date: "Sun Aug 23", times: ["12:00 PM", "5:00 PM"] },
 ];
 
 export default function Schedule() {
@@ -118,7 +118,7 @@ export default function Schedule() {
                   borderBottom: "1px solid var(--border)",
                 }}
               >
-                {["Date", "2 PM Pod", "6 PM Pod"].map((h) => (
+                {["Date", "Noon Pod", "5 PM Pod"].map((h) => (
                   <div
                     key={h}
                     style={{
