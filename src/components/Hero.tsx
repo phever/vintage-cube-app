@@ -73,7 +73,7 @@ export default function Hero() {
         <span style={{ color: "var(--text)", fontWeight: 500 }}>
           Calgary Food Bank
         </span>
-        . Battling for a:{" "}
+        . Battling for a{" "}
         <span style={{ color: "var(--text)", fontWeight: 500 }}>
           Tundra
         </span>
