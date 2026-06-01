@@ -55,13 +55,13 @@ export default function Format() {
               </p>
               <p style={{ margin: "0 0 16px" }}>
                 You sit down with 7 others and draft 3 packs of 15 cards. Build
-                a 40-card deck and battle for your seat in the top 8.
+                a 40-card deck (basic lands provided) and battle for your seat in the top 8.
               </p>
               <p style={{ margin: 0 }}>
                 <strong style={{ color: "var(--text)" }}>Vintage</strong> means
-                the most broken, most powerful cards ever printed are all in the
+                the most iconic, powerful cards ever printed are all in the
                 pool — Power Nine, dual lands, and every broken spell ever
-                printed. Pure, unfiltered Magic.
+                printed. Pure, unadulterated Magic.
               </p>
             </div>
 
